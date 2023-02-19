@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blandet4-4/static/css/main.7acaea2f.css",
+    "main.js": "/blandet4-4/static/js/main.07d3183d.js",
+    "index.html": "/blandet4-4/index.html",
+    "main.7acaea2f.css.map": "/blandet4-4/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/blandet4-4/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
