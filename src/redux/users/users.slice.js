@@ -13,6 +13,7 @@ const usersSlise = createSlice({
         state.isLoading = false;
         state.items = payload;
         state.error = null;
+        state.currentUser = null;
       })
       .addCase(feachUsers.rejected, (state, { payload }) => {
         state.isLoading = false;
@@ -30,14 +31,14 @@ const usersSlise = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
-      //TODO доробити
       .addCase(deleteUser.pending, state => {
         state.isLoading = true;
       })
       .addCase(deleteUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.currentUser = payload;
+        state.items = state.items.filter(user => user.id !== payload.id);
         state.error = null;
+        state.currentUser = null;
       })
       .addCase(deleteUser.rejected, (state, { payload }) => {
         state.isLoading = false;
