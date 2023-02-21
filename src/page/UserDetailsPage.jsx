@@ -32,7 +32,7 @@ export default function UserDetailsPage() {
         <>
           <Button
             as={Link}
-            to={location?.state?.from ?? '/'}
+            to={location?.state?.from ?? '/users'}
             variant="dark"
             className="mb-4 ms-5"
           >
@@ -53,8 +53,17 @@ export default function UserDetailsPage() {
               <p>
                 <b>Pet:</b> {user.pet}
               </p>
-              <Button variant="dark" onClick={handleShow}>
+              <Button variant="dark" onClick={handleShow} className="mx-2">
                 Delete
+              </Button>
+              <Button
+                as={Link}
+                to={`/users/updata/${id}`}
+                variant="dark"
+                className="mx-2"
+                state={{ user }}
+              >
+                Updata
               </Button>
             </Col>
           </Row>
@@ -69,7 +78,7 @@ export default function UserDetailsPage() {
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              <Button variant="dark" onClick={handleDelete}>
+              <Button variant="danger" onClick={handleDelete}>
                 Delete
               </Button>
             </Modal.Footer>

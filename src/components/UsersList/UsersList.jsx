@@ -7,9 +7,9 @@ export default function UsersList() {
   const location = useLocation();
   const usersList = useSelector(selectUsers);
   return (
-    <ListGroup>
+    <ListGroup as="ol" numbered>
       {usersList.map(({ id, name }) => (
-        <ListGroup.Item key={id}>
+        <ListGroup.Item key={id} as="li">
           <Link
             to={id}
             state={{ from: location }}

@@ -37,3 +37,24 @@ export const deleteUser = createAsyncThunk(
     }
   }
 );
+
+export const addUser = createAsyncThunk('user/add', async (user, thunkAPI) => {
+  try {
+    const { data } = await usersAPI.post(`/users`, user);
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
+
+export const editUser = createAsyncThunk(
+  'user/edit',
+  async (user, thunkAPI) => {
+    try {
+      const { data } = await usersAPI.put(`/users/${user.id}`, user);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

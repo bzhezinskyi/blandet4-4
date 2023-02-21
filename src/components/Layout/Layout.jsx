@@ -8,7 +8,7 @@ export default function Layout() {
     <>
       <header>{!id && <Navigation />}</header>
       <main>
-        <Container className="py-4">
+        <Container className="py-2">
           <Outlet />
         </Container>
       </main>
